@@ -94,28 +94,27 @@
 
   根据产品用户表（Hbase） 去计算公式得到相似度评分：
 
-  <img src="D:/Code/IdeaProjects/flink-recommandSystem-demo/resources/pic/%E5%9F%BA%E4%BA%8E%E7%89%A9%E5%93%81%E7%9A%84%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4%E5%85%AC%E5%BC%8F.svg" width="30%" height="30%">
+  <img src="resources/pic/%E5%9F%BA%E4%BA%8E%E7%89%A9%E5%93%81%E7%9A%84%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4%E5%85%AC%E5%BC%8F.svg" width="30%" height="30%">
                  
 
 ### 3. 前台推荐页面
 
-​	当前推荐结果分为3列,分别是热度榜推荐,协同过滤推荐和产品画像推荐
+​ 当前推荐结果分为3列,分别是热度榜推荐,协同过滤推荐和产品画像推荐
 
 <div align=center><img src="resources/pic/推荐页面.png" width="80%" height="100%"></div>
 
 ### 4. 后台数据大屏
 
-​	**在后台上显示推荐系统的实时数据**,数据来自其他Flink计算模块的结果.目前包含热度榜和1小时日志接入量两个指标. 
+​ **在后台上显示推荐系统的实时数据**,数据来自其他Flink计算模块的结果.目前包含热度榜和1小时日志接入量两个指标. 
 真实数据位置在resource/database.sql
 
 <div align=center><img src="resources/pic/后台数据.png" width="80%" height="100%"></div>
 
-### 5. 部署说明 (待补充)
+### 5. 部署说明 
+>以下的部署均使用Docker，对于搭建一套复杂的系统，使用docker来部署各种服务中间件再合适不过了。这里有一套简单的[Docker入门系列](https://blog.csdn.net/qqHJQS/column/info/33078)
 
-### 6. 下一步工作
+详细的部署说明已经写了一篇文章来说明了，按照流程即可运行项目，无需自己搭建任何组件。
+[文章地址](https://xinze.fun/2019/11/19/%E4%BD%BF%E7%94%A8Docker%E9%83%A8%E7%BD%B2Flink%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%A1%B9%E7%9B%AE/)
 
-1. 添加前台发送kafka日志
-2. 添加部署说明
-3. 完善数据大屏,显示更详细的指标
-4. 统计召回率/准确率等业务指标
-
+Hbase部署说明-》[使用Docker搭建伪分布式Hbase(外置Zookeeper)](https://www.jianshu.com/p/3aabe3a152a8)
+Kafka部署说明-》[使用Docker部署Kafka时的网络应该如何配置](https://www.jianshu.com/p/52a505354bbc)

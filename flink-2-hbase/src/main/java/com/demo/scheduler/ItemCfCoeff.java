@@ -23,10 +23,10 @@ public class ItemCfCoeff {
      * @param id     产品id
      * @param others 其他产品的id
      */
-    public void getSingelItemCfCoeff(String id, String[] others) throws Exception {
+    public void getSingelItemCfCoeff(String id, List<String> others) throws Exception {
 
-        List<Map<String, Double>> scores = new ArrayList<>();
         for (String other : others) {
+        	if(id.equals(other)) continue;
             Double score = twoItemCfCoeff(id, other);
             HbaseClient.putData("px",id, "p",other,score.toString());
         }
@@ -50,7 +50,7 @@ public class ItemCfCoeff {
         for (Map.Entry entry : p1) {
             String key = (String) entry.getKey();
             for (Map.Entry p : p2) {
-                if (key == (String) p.getKey()) {
+                if (key.equals(p.getKey())) {
                     sum++;
                 }
             }
